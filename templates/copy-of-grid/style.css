@@ -4,44 +4,82 @@ blockquote,q{quotes:none}blockquote:after,blockquote:before,q:after,q:before{con
 {{{appCSS}}}
 
 /* Custom scroll bar */
+      /* total width */
+      nav::-webkit-scrollbar {
+        width:4px
+        }
 
-  /* total width */
-  nav::-webkit-scrollbar {
-    width:4px
+      /* background of the scrollbar except button or resizer */
+      nav::-webkit-scrollbar-track {
+        background-color: limegreen; 
+        }
+
+      /* scrollbar itself */
+      nav::-webkit-scrollbar-thumb {
+        background-color:tomato ;
+        border-radius:4px ;
+        }
+
+      /* set button(top and bottom of the scrollbar) */
+      nav::-webkit-scrollbar-button {display:none}
+
+
+/*
+
+  Font Settings
+  Modular Scale — 1.125 (Segunda mayor) [https://youtu.be/C6N8bOAC24M?list=PL4xaDWI1ByuTM7R7g67R38RDGBO5AolsN]
+  https://www.modularscale.com/?1&em&1.125 
+
+*/
+
+html{
+  font-size: 100% ;         /* 100% = 16px */
   }
 
-  /* background of the scrollbar except button or resizer */
-  nav::-webkit-scrollbar-track {
-    background-color: limegreen; 
+p {
+  font-size: 1em ;          /* 1em = 16px */
   }
 
-  /* scrollbar itself */
-  nav::-webkit-scrollbar-thumb {
-    background-color:tomato ;
-    border-radius:4px ;
+h1 {
+  font-size: 2em ;          /* 2em = 32px */
   }
 
-  /* set button(top and bottom of the scrollbar) */
-  nav::-webkit-scrollbar-button {display:none}
+header {
+  font-size: 2.566em ;      /* 2.566 × 16px = 41.056px */
+  padding: 0.4em;           /* 0.4 em = 16,42px, 41.056 x 0.4 = 16,42 */
+}
+  
+nav a h1 {
+  font-size: 1.424em ;      /* 1.424 × 16px = 22.78px */
+  margin-bottom: .493em ;
+  }
+  nav a h2 {
+    font-size: 1.424em ;
+    }
+    nav a h3 {
+      font-size: 1.424em ;
+      }
+
+footer {
+  font-size: 2.566em ;
+  }
 
 
 html, body {
   width: 100vw;
   min-height: 100vh ;
-  margin: 0;
-  padding: 0;
-
-  font-family: "Times New Roman", "Times New Roman", Times, serif;
+  margin: 0 ;
+  padding: 0 ;
+  font-family: "Times New Roman", "Times New Roman", Times, serif ;
+  text-rendering: optimizelegibility ;
+  -webkit-font-smoothing: antialiased;
   font-weight: 400 ;
+  
   }
 body {
   display: grid ;
   grid-template-columns: [header-start] minmax(200px, 3fr) 9fr [header-end] ;
-  grid-template-rows:[header-start] 40px [nav-start] auto [nav-end] 56px  ;
-  
-  text-rendering: optimizelegibility ;
-  font-family: "Times New Roman", "Times New Roman", Times, serif;
-  font-weight: 400 ;
+  grid-template-rows:[header-start] 56px [nav-start] auto [nav-end] 56px  ;
   }
 header {
   display: flex ;
@@ -49,10 +87,7 @@ header {
   align-items: center ;
   grid-column: header-start / header-end ;
   color: black ;
-  padding: 0 1rem ;
-  font-size: 24px ;
-  font-family: "Times New Roman", "Times New Roman", Times, serif;
-  -webkit-font-smoothing: antialiased;
+  
   background: chocolate ;
 
   position: -webkit-sticky;
@@ -64,19 +99,15 @@ header {
   nav {
     grid-row: nav-start / nav-end ;
     background: white ;
-    background-color: lime ;
+    background-color: teal ;
     height: calc(100vh - 96px);
     overflow: auto ;
     -webkit-overflow-scrolling: touch ;
     
     }
     nav a {
-      padding: .8rem 1rem ;
+      padding: .889em ; 
       display: block ;
-      font-family: "Times New Roman", "Times New Roman", Times, serif;
-      font-size: 18px ;
-      font-weight: 400 ;
-      line-height: 24px ;
       text-decoration: none ;    
       -webkit-font-smoothing: antialiased ;
       color: black;
@@ -107,7 +138,6 @@ footer {
   padding-top: .5rem ;
   }
   footer a {
-    font-size: 24px ;
     font-family: "Times New Roman", "Times New Roman", Times, serif;
     -webkit-font-smoothing: antialiased;
     color: white ;
@@ -123,10 +153,7 @@ a h1 {
   text-decoration: none ;
   }
 a h3 {
-  font-family: "Times New Roman", "Times New Roman", Times, serif;
-  font-size: 18px ;
   font-weight: 400 ;
-  line-height: 24px ;
   font-style: italic ; 
   }
 
