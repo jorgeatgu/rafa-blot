@@ -1,0 +1,14 @@
+<div class="entry">
+    <a class="full" href="{{url}}"></a>
+
+    {{#thumbnail.large}}
+    <img class="thumb" src="{{url}}" width="{{width}}" height="{{height}}"/>
+    {{/thumbnail.large}}
+    {{^thumbnail.large}}
+    
+    <div class="teaser">
+      {{{titleTag}}}
+      {{{teaser}}}
+    </div>
+    {{/thumbnail.large}}
+</div>

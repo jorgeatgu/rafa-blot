@@ -1,0 +1,66 @@
+Date: June 12, 2014
+Permalink: /laudum-nature
+
+# Laudum Nature
+
+**Marina** <br> *tetas locas*
+
+You can use *Markdown*, a lightweight markup language for plain text files.
+
+**This text will be bold.**
+
+To create italics, use a single asterix (*) on either side of the text:
+*This text will be italic.*
+Both * or _ symbols work to make text bold or italic. This way you can combine bold and italic in the same sentence. For example:
+
+**Everyone _must_ listen.**
+
+Use one octothrope "#" to create a subheading.
+# Largest heading
+
+Use two octothropes "##" to create a subheading.
+## Subheading
+
+Alternatively, for H1 and H2, an underline-ish style:
+
+Alternative heading
+===================
+
+Alternative subheading
+----------------------
+
+Create a text link by wrapping the linked text in brackets [ ], and then wrapping the link in parenthesis ( ). For example:
+[Wikipedia](https://wikipedia.org)
+
+For images use the syntax for a link, with an exclamation point (!) in front. For example:
+
+![Image title](http://www.risasinmas.com/wp-content/uploads/2012/03/perro-lengua-rsm-600x600.jpg)
+
+
+Make a bulleted list by preceding list items with a single hyphen (-) or an asterix (*).
+You need a space between the hyphen and the text.
+- Round
+* Shell
+- Projectile
+
+Create a numbered list by preceding list items with a number.
+1. Eins
+2. Deux
+3. Tres
+
+Indent code with four spaces:
+
+    var foo = “bar”;
+You can also wrap code with three backticks (`) and specify the language to enable syntax highlighting:
+
+```javascript
+var foo = "bar";
+```
+
+
+Blockquotes
+Markdown uses email-style > characters for block quoting. They are presented as:
+
+> This is a blockquote with two paragraphs.
+>
+> This is the second pragraph. Vestibulum enim wisi.

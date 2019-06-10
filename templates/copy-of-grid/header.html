@@ -1,0 +1,16 @@
+<header>
+  <a href="/" title="Home" class="{{#isActive}}/{{/isActive}}">{{title}}</a>
+</header>
+<nav>
+  <ul>    
+    {{#allEntries}}
+    <li>
+      <a href="{{{url}}}">
+        <h1>{{title}}</h1>
+        <h2>{{date}}</h2>
+        <h3>{{#tags}}{{tag}}{{^last}}, {{/last}}{{/tags}}</h3>
+      </a>
+    </li>
+    {{/allEntries}}
+  </ul>
+</nav>
