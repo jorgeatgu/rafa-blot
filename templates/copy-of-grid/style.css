@@ -8,8 +8,7 @@ blockquote,q{quotes:none}blockquote:after,blockquote:before,q:after,q:before{con
 Custom scroll bar
 
 */
-      Testing testing testing
-      
+
       /* total width */
       nav::-webkit-scrollbar {
         width:4px
