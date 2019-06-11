@@ -3,7 +3,12 @@ blockquote,q{quotes:none}blockquote:after,blockquote:before,q:after,q:before{con
 
 {{{appCSS}}}
 
-/* Custom scroll bar */
+/*
+
+Custom scroll bar
+
+*/
+
       /* total width */
       nav::-webkit-scrollbar {
         width:4px
@@ -23,7 +28,6 @@ blockquote,q{quotes:none}blockquote:after,blockquote:before,q:after,q:before{con
       /* set button(top and bottom of the scrollbar) */
       nav::-webkit-scrollbar-button {display:none}
 
-
 /*
 
   Font Settings
@@ -32,38 +36,33 @@ blockquote,q{quotes:none}blockquote:after,blockquote:before,q:after,q:before{con
 
 */
 
-html{
+html {
   font-size: 100% ;         /* 100% = 16px */
   }
 
-p {
-  font-size: 1em ;          /* 1em = 16px */
-  }
-
-h1 {
-  font-size: 2em ;          /* 2em = 32px */
-  }
-
-header {
+  .header-title {
   font-size: 2.566em ;      /* 2.566 × 16px = 41.056px */
   padding: 0.4em;           /* 0.4 em = 16,42px, 41.056 x 0.4 = 16,42 */
 }
-  
-nav a h1 {
+
+.nav-title {
   font-size: 1.424em ;      /* 1.424 × 16px = 22.78px */
-  margin-bottom: .493em ;
+  margin-bottom: .345em ;
+  text-decoration: none ;
   }
-  nav a h2 {
-    font-size: 1.424em ;
-    }
-    nav a h3 {
+  .nav-date {
       font-size: 1.424em ;
+      margin-bottom: .272em ;
+      font-style: italic ; 
+      }
+    .nav-tag {
+      font-size: 1.424em ;
+      font-style: italic ; 
       }
 
-footer {
+.footer-menu {
   font-size: 2.566em ;
   }
-
 
 html, body {
   width: 100vw;
@@ -72,7 +71,7 @@ html, body {
   padding: 0 ;
   font-family: "Times New Roman", "Times New Roman", Times, serif ;
   text-rendering: optimizelegibility ;
-  -webkit-font-smoothing: antialiased;
+  -webkit-font-smoothing: antialiased ;
   font-weight: 400 ;
   
   }
@@ -90,75 +89,68 @@ header {
   
   background: chocolate ;
 
-  position: -webkit-sticky;
+  position: -webkit-sticky ;
   position: sticky ;
   top: 0 ;
-  z-index: 2;
+  z-index: 2 ;
   }
 
   nav {
     grid-row: nav-start / nav-end ;
     background: white ;
     background-color: teal ;
-    height: calc(100vh - 96px);
+    height: calc(100vh - 96px) ;
     overflow: auto ;
     -webkit-overflow-scrolling: touch ;
-    
     }
-    nav a {
+    .nav-entry {
       padding: .889em ; 
       display: block ;
       text-decoration: none ;    
       -webkit-font-smoothing: antialiased ;
-      color: black;
+      color: black ;
+      text-decoration: none ;
       }
-      nav li:hover a h1 {
-        text-decoration: underline;
+      .nav-entry:hover .nav-title {
+        text-decoration: underline ;
         }
 
 main {
     grid-column-start: 2 ;
     background-color: red ;
-    height: calc(100vh - 96px);
+    height: calc(100vh - 96px) ;
     overflow: auto ;
     -webkit-overflow-scrolling: touch ;
     } 
+
 footer {
   grid-column: header-start / header-end ;
   background-color:black ;
-  position: -webkit-sticky;
+  position: -webkit-sticky ;
   position: sticky ;
   bottom: 0 ;
-  z-index: 2;
-
-
+  z-index: 2 ;
   display: flex ;
   justify-content: flex-start ;
   align-items: flex-start ;
   padding-top: .5rem ;
   }
+
   footer a {
-    font-family: "Times New Roman", "Times New Roman", Times, serif;
-    -webkit-font-smoothing: antialiased;
+    font-family: "Times New Roman", "Times New Roman", Times, serif ;
     color: white ;
     text-decoration: none ;
     padding: 0 0 0 1rem ;
     }
     footer a:hover{
       text-decoration: underline ;
-      -webkit-font-smoothing: antialiased;
     }
 
-a h1 {
-  text-decoration: none ;
-  }
-a h3 {
-  font-weight: 400 ;
-  font-style: italic ; 
-  }
+/*
 
+  Cosas de Blot
 
-/*           Cosas de Blot            */
+*/
 
 .pagination {text-align: center;margin: 2em 0}
 .pagination a {margin: 0 1em;display: inline-block;}
