@@ -136,13 +136,13 @@ footer {
   padding-top: .5rem ;
   }
 
-  footer a {
+  .foo-link {
     font-family: "TimesNewRoman", "Times New Roman", Times, Georgia, serif ;
     color: white ;
     text-decoration: none ;
     padding: 0 0 0 1rem ;
     }
-    footer a:hover{
+    .foo-link:hover{
       text-decoration: underline ;
     }
 
