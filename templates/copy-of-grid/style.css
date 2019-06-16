@@ -40,10 +40,10 @@ html {
   font-size: 100% ;         /* 100% = 16px */
   }
 
-  .header-title {
+.header-title {
   font-size: 2.566em ;      /* 2.566 × 16px = 41.056px */
   padding: 0.4em;           /* 0.4 em = 16,42px, 41.056 x 0.4 = 16,42 */
-}
+  }
 
 .nav-title {
   font-size: 1.424em ;      /* 1.424 × 16px = 22.78px */
@@ -73,22 +73,21 @@ html, body {
   text-rendering: optimizelegibility ;
   -webkit-font-smoothing: antialiased ;
   font-weight: 400 ;
-  
   }
+
 body {
   display: grid ;
   grid-template-columns: [header-start] minmax(200px, 3fr) 9fr [header-end] ;
   grid-template-rows:[header-start] 56px [nav-start] auto [nav-end] 56px  ;
   }
+  
 header {
   display: flex ;
   justify-content: flex-start ;
   align-items: center ;
   grid-column: header-start / header-end ;
   color: black ;
-  
   background: chocolate ;
-
   position: -webkit-sticky ;
   position: sticky ;
   top: 0 ;
@@ -165,7 +164,6 @@ img {max-width: 100%;height: auto;vertical-align: middle;}
   max-width: 100% ;
   height: 681px ;
   position: relative;
-
   padding: 0 128px ;
   display: flex ;
   justify-content: center ;
@@ -191,7 +189,6 @@ img {max-width: 100%;height: auto;vertical-align: middle;}
   height: auto;
   margin: auto;
 }
-
 
 .entry .teaser {
   width: 100% ;
