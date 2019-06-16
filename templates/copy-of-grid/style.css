@@ -10,23 +10,22 @@ Custom scroll bar
 */
 
       /* total width */
-      nav::-webkit-scrollbar {
+      nav::-webkit-scrollbar , main::-webkit-scrollbar {
         width:4px
         }
 
       /* background of the scrollbar except button or resizer */
-      nav::-webkit-scrollbar-track {
-        background-color: limegreen; 
+      nav::-webkit-scrollbar-track , main::-webkit-scrollbar-track {
+        background-color: white; 
         }
 
       /* scrollbar itself */
-      nav::-webkit-scrollbar-thumb {
-        background-color:tomato ;
-        border-radius:4px ;
+      nav::-webkit-scrollbar-thumb , main::-webkit-scrollbar-thumb {
+        background-color: gray ;
         }
 
       /* set button(top and bottom of the scrollbar) */
-      nav::-webkit-scrollbar-button {display:none}
+      nav::-webkit-scrollbar-button , main::-webkit-scrollbar-button {display:none}
 
 /*
 
@@ -40,30 +39,6 @@ html {
   font-size: 100% ;         /* 100% = 16px */
   }
 
-  .header-title {
-  font-size: 2.566em ;      /* 2.566 × 16px = 41.056px */
-  padding: 0.4em;           /* 0.4 em = 16,42px, 41.056 x 0.4 = 16,42 */
-}
-
-.nav-title {
-  font-size: 1.424em ;      /* 1.424 × 16px = 22.78px */
-  margin-bottom: .345em ;
-  text-decoration: none ;
-  }
-  .nav-date {
-      font-size: 1.424em ;
-      margin-bottom: .272em ;
-      font-style: italic ; 
-      }
-    .nav-tag {
-      font-size: 1.424em ;
-      font-style: italic ; 
-      }
-
-.footer-menu {
-  font-size: 2.566em ;
-  }
-
 html, body {
   width: 100vw;
   min-height: 100vh ;
@@ -73,77 +48,106 @@ html, body {
   text-rendering: optimizelegibility ;
   -webkit-font-smoothing: antialiased ;
   font-weight: 400 ;
-  
   }
+
 body {
   display: grid ;
   grid-template-columns: [header-start] minmax(200px, 3fr) 9fr [header-end] ;
-  grid-template-rows:[header-start] 56px [nav-start] auto [nav-end] 56px  ;
+  grid-template-rows:[header-start] 56px [nav-start] auto [nav-end] 40px  ;
+  overflow: hidden;
   }
+
 header {
   display: flex ;
   justify-content: flex-start ;
   align-items: center ;
   grid-column: header-start / header-end ;
-  color: black ;
-  
-  background: chocolate ;
-
+  background: black ;
+  color: white ;
   position: -webkit-sticky ;
   position: sticky ;
   top: 0 ;
   z-index: 2 ;
   }
 
+.header-title {
+  font-size: 2.566em ;      /* 2.566 × 16px = 41.056px */
+  /* padding: 0.4em;           0.4 em = 16,42px, 41.056 x 0.4 = 16,42 */
+  
+  /* 
+  REM para todo menos lo que tiene que ver con tipografía:
+    - Un icono al lado de un texto (así escala relativo a su hermano)
+    - line-height
+    - Margins de texto 
+  */
+  padding: .889rem ;
+  }
+
   nav {
     grid-row: nav-start / nav-end ;
-    background: white ;
-    background-color: teal ;
-    height: calc(100vh - 96px) ;
+    background-color: white ;
+    height: calc(100vh - 56px) ;
     overflow: auto ;
     -webkit-overflow-scrolling: touch ;
     }
     .nav-entry {
-      padding: .889em ; 
+      padding: .889rem ;
       display: block ;
       text-decoration: none ;    
       -webkit-font-smoothing: antialiased ;
       color: black ;
       text-decoration: none ;
       }
-      .nav-entry:hover .nav-title {
+      
+      .nav-entry:hover .nav-title--active {
         text-decoration: underline ;
         }
+          
+        .nav-title {
+          font-size: 1.424em ;      /* 1.424 × 16px = 22.78px */
+          margin-bottom: .345em ;
+          text-decoration: none ;
+          }
+
+        .nav-date {
+            font-size: 1.424em ;
+            margin-bottom: .272em ;
+            font-style: italic ; 
+            }
+
+        .nav-tag {
+          font-size: 1.424em ;
+          font-style: italic ; 
+          }
 
 main {
     grid-column-start: 2 ;
-    background-color: red ;
-    height: calc(100vh - 96px) ;
+    background-color: white ;
+    height: calc(100vh - 56px) ;
     overflow: auto ;
     -webkit-overflow-scrolling: touch ;
     } 
 
-footer {
-  grid-column: header-start / header-end ;
-  background-color:black ;
-  position: -webkit-sticky ;
-  position: sticky ;
-  bottom: 0 ;
-  z-index: 2 ;
-  display: flex ;
-  justify-content: flex-start ;
-  align-items: flex-start ;
-  padding-top: .5rem ;
+.footer-menu { 
+    grid-column: header-start / header-end ;
+    background-color: transparent ;
+    position: sticky ;
+    bottom: 0 ;
+    z-index: 2 ;
+    display: flex ;
+    justify-content: flex-end ;
+    align-items: center ;
   }
-
-  footer a {
+  .foo-link {
     font-family: "TimesNewRoman", "Times New Roman", Times, Georgia, serif ;
-    color: white ;
+    font-size: 1em ;
+    color: black ;
     text-decoration: none ;
-    padding: 0 0 0 1rem ;
+    padding: 0 1rem 0 0 ;
+    transition: 0.3s;
     }
-    footer a:hover{
-      text-decoration: underline ;
+    .foo-link:hover{
+      color: gray ;
     }
 
 /*
@@ -165,7 +169,6 @@ img {max-width: 100%;height: auto;vertical-align: middle;}
   max-width: 100% ;
   height: 681px ;
   position: relative;
-
   padding: 0 128px ;
   display: flex ;
   justify-content: center ;
@@ -191,7 +194,6 @@ img {max-width: 100%;height: auto;vertical-align: middle;}
   height: auto;
   margin: auto;
 }
-
 
 .entry .teaser {
   width: 100% ;
