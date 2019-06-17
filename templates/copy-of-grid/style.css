@@ -21,7 +21,7 @@ Custom scroll bar
 
       /* scrollbar itself */
       nav::-webkit-scrollbar-thumb , main::-webkit-scrollbar-thumb {
-        background-color: gray ;
+        background-color:limegreen ;
         }
 
       /* set button(top and bottom of the scrollbar) */
@@ -132,7 +132,7 @@ main {
     grid-column: header-start / header-end ;
     background-color: transparent ;
     position: sticky ;
-    bottom: 0 ;
+    bottom: 40px ;
     z-index: 2 ;
     display: flex ;
     justify-content: flex-end ;
@@ -167,12 +167,17 @@ img {max-width: 100%;height: auto;vertical-align: middle;}
 
 .entry {
   max-width: 100% ;
-  height: 681px ;
-  position: relative;
-  padding: 0 128px ;
+  /*
+  
+  Calculo la altura de las entry con el 
+  100vh - altura del header + altura del footer + padding superior e inferior de entry.
+  
+  */
+  height: calc(100vh - (56px + 40px + (.889rem * 2) )) ;
   display: flex ;
-  justify-content: center ;
-  align-items: center ;
+  position: relative ;
+  align-items: flex-start ;
+  padding: .889rem ;
   overflow: hidden ;
   }
   
@@ -199,4 +204,20 @@ img {max-width: 100%;height: auto;vertical-align: middle;}
   width: 100% ;
 }
 
-.entry .teaser * {font-size: 12px;line-height: 15px;text-align: center;}
+.entry:nth-child(even) {
+  background-color: whitesmoke ;
+} 
+.entry:nth-child(odd) {
+  background-color: wheat ;
+} 
+
+.teaser-title h1:first-child {
+  font-size: 1.424em ;      /* 1.424 × 16px = 22.78px */
+  text-align: left ;
+  text-decoration: none ;
+  margin-bottom: .345em ;
+  color: black ;
+  }
+
+
+
