@@ -1,14 +1,6 @@
 <div id="{{title}}" class="entry">
     <div class="full" href="{{url}}"></div>
-
-    {{#thumbnail.large}}
-    <img class="thumb" src="{{url}}" width="{{width}}" height="{{height}}"/>
-    {{/thumbnail.large}}
-    {{^thumbnail.large}}
-    
-    <div class="teaser-title teaser">
-        <!-- {{{titleTag}}}       -->
-        {{{teaser}}}
-    </div>
-    {{/thumbnail.large}}
+    {{#absoluteURLs}}
+        {{{html}}}
+    {{/absoluteURLs}}
 </div>

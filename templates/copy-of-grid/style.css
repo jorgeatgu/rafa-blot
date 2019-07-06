@@ -22,7 +22,7 @@ Custom scroll bar
 
       /* background of the scrollbar except button or resizer */
       nav::-webkit-scrollbar-track , main::-webkit-scrollbar-track {
-        background: linear-gradient(180deg, #077dd7 0%, #07d7c9 100%) ;
+        background: white ;
         }
 
       /* scrollbar itself */
@@ -61,7 +61,7 @@ html, body {
 
 body {
   display: grid ;
-  grid-template-columns: [header-start] minmax(200px, 3fr) 9fr [header-end] ;
+  grid-template-columns: [header-start] minmax(200px, 2fr) 9fr [header-end] ;
   grid-template-rows:[header-start] 56px [nav-start] auto [nav-end] 40px  ;
   overflow: hidden;
   background: linear-gradient(180deg, #077dd7 0%, #07d7c9 100%) ;
@@ -82,9 +82,7 @@ header {
   }
 
 .header-title {
-  font-size: 2.566em ;      /* 2.566 × 16px = 41.056px */
-  /* padding: 0.4em;           0.4 em = 16,42px, 41.056 x 0.4 = 16,42 */
-  
+  font-size: 2.281em ;      /* 2.281 × 16px = 36.4px */
   /* 
   REM para todo menos lo que tiene que ver con tipografía:
     - Un icono al lado de un texto (así escala relativo a su hermano)
@@ -108,6 +106,7 @@ header {
       -webkit-font-smoothing: antialiased ;
       color: black ;
       text-decoration: none ;
+
       }
       
       .nav-entry:hover .nav-title--active {
@@ -115,8 +114,8 @@ header {
         }
           
         .nav-title {
-          font-size: 1.424em ;      /* 1.424 × 16px = 22.78px */
-          margin-bottom: .345em ;
+          font-size: 1.266em ;      /* 1.424 × 16px = 22.78px */
+          margin-bottom: .3em ;
           text-decoration: none ;
           }
 
@@ -127,10 +126,9 @@ header {
             }
 
         .nav-tag {
-          font-size: 1.424em ;
+          font-size: 1.125em ;
           font-style: italic ; 
           text-transform: capitalize ;
-          orphans: 2 ;
           }
 
 main {
@@ -146,7 +144,7 @@ main {
     height: 40px ;
     background-color: transparent ;
     position: fixed ;
-    bottom: 0 ;
+    bottom: .3rem ;
     display: flex ;
     justify-content: flex-end ;
     align-items: center ;
@@ -155,7 +153,7 @@ main {
   .foo-link {
     font-family: "TimesNewRoman", "Times New Roman", Times, Georgia, serif ;
     /* font-size: 1em ; */
-    font-size: 1.424em ;
+    font-size: 1.266em ;
     color: black ;
     text-decoration: none ;
     padding: 0 1rem 0 0 ;
@@ -181,7 +179,7 @@ img {max-width: 100%;height: auto;vertical-align: middle;}
 .clear {width: 100%;clear: both;display: block;}
 
 .entry {
-  max-width: 100% ;
+  width: 80% ;
   /*
   
   Calculo la altura de las entry con el 
@@ -192,8 +190,8 @@ img {max-width: 100%;height: auto;vertical-align: middle;}
   display: flex ;
   position: relative ;
   align-items: flex-start ;
-  padding: 1rem 0 ;
-  margin: 1rem 0 ;
+  padding: .889rem 0 ;
+  margin: 1rem auto ;
   box-sizing: border-box;
   overflow: hidden ;
   }
@@ -202,16 +200,11 @@ img {max-width: 100%;height: auto;vertical-align: middle;}
 .entry:before {content: "";display: block;padding-top: 0%;}
 
 .entry img {
-  position: absolute;
-  top: -1000px;
-  bottom: -1000px;
-  left: -1000px;
-  right: -1000px;
-  max-width: 100%;
-  max-height: 100%;
-  width: auto;
-  height: auto;
-  margin: auto;
+  max-width: 100% ;
+  max-height: 100% ;
+  width: auto ;
+  height: auto ;
+  margin: auto ;
 }
 
 .entry .teaser {
