@@ -4,30 +4,16 @@
   <body>
 
     {{> header}}
-    <main>
+  <main>
     {{#entries}}
       {{> item}}
     {{/entries}}
-
-    <!-- <div class="clear"></div>
-    {{#pagination}}
-    <div class="pagination">
-      {{#previous}}
-        <a href="/page/{{previous}}"><strong>← Newer</strong></a>
-      {{/previous}}
-      Page {{current}} of {{total}}
-      {{#next}}
-        <a href="/page/{{next}}"><strong>Older →</strong></a>
-      {{/next}}
-    </div>
-    {{/pagination}} -->
-
   </main>
   <footer class="footer-menu">
       <ul>
           {{#menu}}  
               <li>
-                <!-- <a href="https://twitter.com/rafagarces" title="Twitter">Twitter</a> -->
+                <a href="https://twitter.com/rafagarces" title="Twitter" class="foo-link">Twitter</a>
                 <a href="https://www.linkedin.com/in/rafagarces" title="LinkedIn" class="foo-link" >LinkedIn</a>
                 <a href="http://instagram.com/rafagarces" title="Instagram" class="foo-link" >Instagram</a>
                 <a href="https://behance.net/rafagarces" title="Behance" class="foo-link" >Behance</a>
