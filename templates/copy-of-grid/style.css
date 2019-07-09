@@ -66,7 +66,7 @@ body {
   overflow: hidden;
   background: linear-gradient(180deg, #077dd7 0%, #07d7c9 100%) ;
   }
-
+   
 header {
   display: flex ;
   justify-content: flex-start ;
@@ -137,6 +137,8 @@ main {
     height: calc(100vh - 56px) ;
     overflow: auto ;
     -webkit-overflow-scrolling: touch ;
+    padding: 2rem 0 2rem 0 ;
+    box-sizing: border-box ;
     } 
 
 .footer-menu { 
@@ -186,12 +188,12 @@ img {max-width: 100%;height: auto;vertical-align: middle;}
   100vh - altura del header + padding superior e inferior de entry.
   
   */
-  height: calc(100vh - (56px + (.889rem * 2) )) ;
+  /* height: calc(100vh - (56px + (.889rem * 2) )) ; */
+  height: auto ;
   display: flex ;
   position: relative ;
   align-items: flex-start ;
-  padding: .889rem 0 ;
-  margin: 1rem auto ;
+  margin: 0 auto 2rem auto ;
   box-sizing: border-box;
   overflow: hidden ;
   }
@@ -217,4 +219,34 @@ img {max-width: 100%;height: auto;vertical-align: middle;}
   text-decoration: none ;
   margin-bottom: .345em ;
   color: black ;
+  }
+
+@media screen and (max-width: 425px) {
+
+  body {
+    grid-template-columns: [header-start] minmax(0, 0fr) 100vw [header-end] ;
+    grid-template-rows:[header-start] 40px [nav-start] auto [nav-end] 32px  ;
+    }
+  
+  main {
+    height: calc(100vh - 40px) ;
+    }
+
+  .entry {
+    width: 100% ;
+    height: auto ;
+    }
+  
+  .footer-menu {
+    bottom: 0 ;
+    }
+  .foo-link {
+    font-size: 0.889em;
+    }
+
+  .header-title{
+    font-size: 1.802em ;
+    padding: .243em ;
+    }
+
   }
