@@ -192,7 +192,8 @@ img {max-width: 100%;height: auto;vertical-align: middle;}
   height: auto ;
   display: flex ;
   position: relative ;
-  align-items: flex-start ;
+  justify-content: center;
+  align-items: center; ;
   margin: 0 auto 2rem auto ;
   box-sizing: border-box;
   overflow: hidden ;

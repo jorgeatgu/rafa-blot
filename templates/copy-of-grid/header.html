@@ -22,18 +22,7 @@
 
   <script type="text/javascript">
 
-    var seen = {};
-    
-document.querySelectorAll('.nav-title').forEach(function(node){
-    	    
-    if (isNaN(parseInt(node.innerHTML.trim().split(' ')[0]))) return;
-    
-   	node.innerHTML = node.innerHTML.trim().split(' ').slice(1).join(' ');
-   	
-    if (seen[node.innerHTML]) node.parentElement.remove();
-    
-    seen[node.innerHTML] = true;
-});
+
     
 var attributeToSort = 'data-sort';
 var selector = '.nav-li';
@@ -52,4 +41,17 @@ function sortThem(s) {
 
         
 sortThem(selector);
+    
+        var seen = {};
+    
+document.querySelectorAll('.nav-title').forEach(function(node){
+    	    
+    if (isNaN(parseInt(node.innerHTML.trim().split(' ')[0]))) return;
+    
+   	node.innerHTML = node.innerHTML.trim().split(' ').slice(1).join(' ');
+   	
+    if (seen[node.innerHTML]) node.parentElement.remove();
+    
+    seen[node.innerHTML] = true;
+});
 </script>

@@ -48,6 +48,7 @@
       }
     },
     "archives.html": {
+      "url": "/archives",
       "locals": {
         "pageTitle": "Archives - {{{title}}}",
         "pageDescription": "All the entries posted on {{{title}}}"
@@ -61,6 +62,7 @@
       }
     },
     "search.html": {
+      "url": "/search",
       "locals": {
         "pageTitle": "Search - {{{title}}}",
         "pageDescription": "Seach all the entries posted on {{{title}}}"
