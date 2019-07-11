@@ -3,34 +3,13 @@
     {{title}}
   </a>
 
-  <script type="text/javascript">
 
-      // e.g. <span data-path="/foo" class="sort-me">...</span>
-      var attributeToSort = 'data-path';
-      var selector = '.sort-me';
-      
-      var zero="0".charCodeAt(0);function isWhitespace(i){return i<=32}function isDigit(i){return 48<=i&&i<=57}var compare=function(i,r){for(var t,e,f,n,o,u,s,a,c=0,h=0,g=i.length,D=r.length;c<g&&h<D;){for(t=i.charCodeAt(c),e=r.charCodeAt(h),f=n=0,o=u=0,s=!0,a=0;isWhitespace(t);)c+=1,t=i.charCodeAt(c);for(;isWhitespace(e);)h+=1,e=r.charCodeAt(h);if(isDigit(t)&&!isDigit(e))return-1;if(!isDigit(t)&&isDigit(e))return 1;if(!s)return-1;for(0;t===zero;)f+=1,c+=1,t=i.charCodeAt(c);for(;e===zero;)n+=1,h+=1,e=r.charCodeAt(h);for(;isDigit(t)||isDigit(e);)isDigit(t)&&isDigit(e)&&0===a&&(s?t<e?a=-1:t>e&&(a=1):t>e?a=-1:t<e&&(a=1)),isDigit(t)&&(c+=1,o+=1,t=i.charCodeAt(c)),isDigit(e)&&(h+=1,u+=1,e=r.charCodeAt(h));if(s){if(o<u)return-1;if(o>u)return 1}else{if(o>u)return-1;if(o<u)return 1}if(a)return a;if(s){if(f>n)return-1;if(f<n)return 1}else{if(f<n)return-1;if(f>n)return 1}if(t<e)return-1;if(t>e)return 1;c+=1,h+=1}return g<D?-1:g>D?1:void 0};
-              
-      function sortThem(s) {
-          Array.prototype.slice.call(document.body.querySelectorAll(s)).sort(function sort (ea, eb) {
-              var a = ea.getAttribute(attributeToSort).trim();
-              var b = eb.getAttribute(attributeToSort).trim();
-      
-              return compare(a,b);
-          }).forEach(function(div) {
-              div.parentElement.appendChild(div);
-          });
-      }
-      
-              
-      sortThem(selector);
-    </script>
     
 </header>
 <nav>
   <ul>    
     {{#allEntries}}
-    <li>
+    <li data-sort="{{name}}" class="nav-li">
       <a class="nav-entry" href="#{{title}}">
         <h1 class="nav-title nav-title--active">{{title}}</h1>
         <h2 class="nav-date">{{date}}</h2>
@@ -40,3 +19,37 @@
     {{/allEntries}}
   </ul>
 </nav>
+
+  <script type="text/javascript">
+
+    var seen = {};
+    
+document.querySelectorAll('.nav-title').forEach(function(node){
+    	    
+    if (isNaN(parseInt(node.innerHTML.trim().split(' ')[0]))) return;
+    
+   	node.innerHTML = node.innerHTML.trim().split(' ').slice(1).join(' ');
+   	
+    if (seen[node.innerHTML]) node.parentElement.remove();
+    
+    seen[node.innerHTML] = true;
+});
+    
+var attributeToSort = 'data-sort';
+var selector = '.nav-li';
+
+var zero="0".charCodeAt(0);function isWhitespace(i){return i<=32}function isDigit(i){return 48<=i&&i<=57}var compare=function(i,r){for(var t,e,f,n,o,u,s,a,c=0,h=0,g=i.length,D=r.length;c<g&&h<D;){for(t=i.charCodeAt(c),e=r.charCodeAt(h),f=n=0,o=u=0,s=!0,a=0;isWhitespace(t);)c+=1,t=i.charCodeAt(c);for(;isWhitespace(e);)h+=1,e=r.charCodeAt(h);if(isDigit(t)&&!isDigit(e))return-1;if(!isDigit(t)&&isDigit(e))return 1;if(!s)return-1;for(0;t===zero;)f+=1,c+=1,t=i.charCodeAt(c);for(;e===zero;)n+=1,h+=1,e=r.charCodeAt(h);for(;isDigit(t)||isDigit(e);)isDigit(t)&&isDigit(e)&&0===a&&(s?t<e?a=-1:t>e&&(a=1):t>e?a=-1:t<e&&(a=1)),isDigit(t)&&(c+=1,o+=1,t=i.charCodeAt(c)),isDigit(e)&&(h+=1,u+=1,e=r.charCodeAt(h));if(s){if(o<u)return-1;if(o>u)return 1}else{if(o>u)return-1;if(o<u)return 1}if(a)return a;if(s){if(f>n)return-1;if(f<n)return 1}else{if(f<n)return-1;if(f>n)return 1}if(t<e)return-1;if(t>e)return 1;c+=1,h+=1}return g<D?-1:g>D?1:void 0};
+        
+function sortThem(s) {
+    Array.prototype.slice.call(document.body.querySelectorAll(s)).sort(function sort (ea, eb) {
+        var a = ea.getAttribute(attributeToSort).trim();
+        var b = eb.getAttribute(attributeToSort).trim();
+        return compare(a,b);
+    }).forEach(function(div) {
+        div.parentElement.appendChild(div);
+    });
+}
+
+        
+sortThem(selector);
+</script>

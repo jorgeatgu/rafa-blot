@@ -1,0 +1,109 @@
+{
+  "name": "rafas-Grid",
+  "locals": {
+    "page_size": "96"
+  },
+  "views": {
+    "tagged.html": {
+      "locals": {
+        "pageTitle": "Entries tagged {{{tag}}} from {{{title}}}",
+        "pageDescription": "All of the entries posted on {{{title}}} tagged {{{tag}}}"
+      },
+      "partials": {
+        "title": "Entries tagged {{{tag}}} from {{{title}}}",
+        "description": "All of the entries posted on {{{title}}} tagged {{{tag}}}",
+        "head": null,
+        "header": null,
+        "item": null,
+        "footer": null
+      }
+    },
+    "error.html": {
+      "locals": {
+        "pageTitle": "{{{error.title}}} - {{{title}}}",
+        "pageDescription": "Error on {{{title}}}"
+      },
+      "partials": {
+        "title": "{{{error.title}}} - {{{title}}}",
+        "description": "Error on {{{title}}}",
+        "head": null,
+        "header": null,
+        "footer": null
+      }
+    },
+    "head.html": {
+      "partials": {
+        "title": null
+      }
+    },
+    "public.html": {
+      "locals": {
+        "pageTitle": "Index of {{{path}}}",
+        "pageDescription": "All the files and folders inside {{{path}}}"
+      },
+      "partials": {
+        "title": "Index of {{{path}}}",
+        "description": "All the files and folders inside {{{path}}}",
+        "head": null
+      }
+    },
+    "archives.html": {
+      "locals": {
+        "pageTitle": "Archives - {{{title}}}",
+        "pageDescription": "All the entries posted on {{{title}}}"
+      },
+      "partials": {
+        "title": "Archives - {{{title}}}",
+        "description": "All the entries posted on {{{title}}}",
+        "head": null,
+        "header": null,
+        "footer": null
+      }
+    },
+    "search.html": {
+      "locals": {
+        "pageTitle": "Search - {{{title}}}",
+        "pageDescription": "Seach all the entries posted on {{{title}}}"
+      },
+      "partials": {
+        "title": "Search - {{{title}}}",
+        "description": "Search all the entries posted on {{{title}}}",
+        "head": null,
+        "header": null
+      }
+    },
+    "entry.html": {
+      "locals": {
+        "pageTitle": "{{{entry.title}}} - {{{title}}}",
+        "pageDescription": "{{{entry.summary}}}"
+      },
+      "partials": {
+        "title": "{{{entry.title}}} - {{{title}}}",
+        "description": "{{{entry.summary}}}",
+        "head": null,
+        "header": null,
+        "pluginHTML": null,
+        "footer": null
+      }
+    },
+    "entries.html": {
+      "locals": {
+        "pageTitle": "{{{title}}}",
+        "pageDescription": "The latest entries posted on {{{title}}}"
+      },
+      "partials": {
+        "title": "{{{title}}}",
+        "description": "The latest entries posted on {{{title}}}",
+        "head": null,
+        "header": null,
+        "item": null,
+        "footer": null
+      }
+    },
+    "header.html": {
+      "partials": {
+        "item": null
+      }
+    }
+  }
+}
