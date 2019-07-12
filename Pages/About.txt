@@ -1,0 +1,29 @@
+Permalink: /about
+
+# Esto es el titular
+
+## Esto un subtitular
+
+Surrounding text with two asterisks makes text bold:
+
+**This text will be bold.**
+
+To create italics, use a single asterix (*) on either side of the text:
+
+*This text will be italic.*
+
+Both * or _ symbols work to make text bold or italic. This way you can combine bold and italic in the same sentence. For example:
+
+**Everyone _must_ listen.**
+
+
+Aquí un enlace guachi:
+[Wikipedia](https://wikipedia.org)
+
+
+This page will replace your blog‘s homepage. 
+
+
+Aquí una imagen con link:
+
+![Image title](https://url.of/the/image.jpg)

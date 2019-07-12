@@ -4,6 +4,11 @@
     "page_size": "96"
   },
   "views": {
+    "footer.html": {
+      "partials": {
+        "footer": null
+      }
+    },
     "tagged.html": {
       "locals": {
         "pageTitle": "Entries tagged {{{tag}}} from {{{title}}}",
