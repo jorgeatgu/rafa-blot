@@ -138,9 +138,22 @@ main {
     height: calc(100vh - 56px) ;
     overflow: auto ;
     -webkit-overflow-scrolling: touch ;
-    padding: 2rem;
+    padding: 3.247rem;
     box-sizing: border-box ;
-    } 
+    }
+
+    main p {
+      font-size: 2.281em ;
+      line-height: normal ;
+      margin-bottom: 2.566rem ;
+      text-decoration: none ;
+      max-width: 80% ;
+      }
+
+      main p a {
+        text-decoration: underline ;
+        color: black ;
+        }
 
 .footer-menu { 
     width: 100% ;
@@ -237,7 +250,17 @@ img {max-width: 100%;height: auto;vertical-align: middle;}
   
   main {
     height: calc(100vh - 40px) ;
+    padding: .243em;
     }
+    main p {
+      font-size: 1.125em ;
+      padding: .243em;
+      margin-bottom: 1.125rem ;
+      max-width: 96% ;
+      }
+      main p:first-child{
+        padding-top: 1em ;
+        }
 
   .entry {
     width: 100% ;
